@@ -5,8 +5,9 @@ Heiman Smart Home Connector (connector/ metadata bundle)
 Copyright (c) 2026 <copyright holder name - replace before publishing>
 
 This file defines the ownership and licensing boundaries that apply in addition
-to the MIT License in the accompanying LICENSE file. Replace every <...>
-placeholder and have Legal / Brand review this file before publication.
+to the MIT License in the accompanying LICENSE file. Replace the remaining
+<...> placeholders (copyright holder, maintainer) and have Legal / Brand
+review this file before publication.
 
 English is the authoritative language of this NOTICE.
 
@@ -41,9 +42,9 @@ client discovers and connects to a remote MCP service. It contains no
 server implementation, no executable backend code, no credentials and
 no user data.
 
-The URL https://smart-home-mcp.example.com/mcp in mcp.json and
-connector-meta.json is a PLACEHOLDER. The deployer must replace it with
-the address of their own HTTPS server before the bundle is usable.
+The URL https://spmcp.heimanhome.com/mcp in mcp.json and
+connector-meta.json is the deployed service endpoint. A deployer running
+their own server must replace it with the address of their HTTPS server.
 
 
 3. Trademarks and names
@@ -121,6 +122,6 @@ platform specification and do not include legal files, READMEs or i18n/.
 9. Contact
 ----------
 Maintainer:  <maintaining organization>
-Repository:  <https://github.com/<org>/<repo>>
-Security:    <security@example.com>  (never post credentials or
+Repository:  https://github.com/heimanhome/heimanhome-mcp.git
+Security:    help@heimanhome.com  (never post credentials or
              vulnerability details in a public issue)

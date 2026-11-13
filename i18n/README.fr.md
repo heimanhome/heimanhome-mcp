@@ -37,10 +37,10 @@ Les chemins sont relatifs à la racine du dépôt.
 
 ## Avant toute utilisation
 
-`https://smart-home-mcp.example.com/mcp` dans `mcp.json` et `connector-meta.json` est une **adresse fictive**. Installé tel quel, le paquet ne se connecte à aucun service. Il faut :
+`https://spmcp.heimanhome.com/mcp` dans `mcp.json` et `connector-meta.json` est l'**adresse du service déployé**. Vérifiez que le service est accessible avant de vous connecter. Il faut :
 
 1. Déployer un serveur MCP accessible publiquement en HTTPS (Streamable HTTP + OAuth, RFC 9728 / 8414 / 7591 / 7636 / 7009) avec les 39 outils décrits dans `SKILL.md`.
-2. Remplacer `example.com` dans les deux fichiers JSON par votre adresse réelle `https://<domaine>/mcp`.
+2. Si vous déployez votre propre serveur, remplacez l'adresse dans les deux fichiers JSON par votre adresse HTTPS.
 3. Vérifier la version client requise par `auth_mode: server-side` (`minWorkbuddyVersion: 4.24.0`).
 4. Obtenir légalement `clientId` / `clientSecret` et l'autorisation d'intégration auprès de la plateforme amont ; les identifiants restent **uniquement sur le serveur**.
 5. Valider les deux fichiers : `python3 -m json.tool connector-meta.json` et `python3 -m json.tool mcp.json`.
@@ -80,4 +80,4 @@ Source : `connector-meta.json` → `i18n.locales.fr`.
 
 Les contenus originaux sont sous MIT (voir `LICENSE`) ; marques, `icon.svg` et contenus non livrés sont exclus (voir `NOTICE`). La liste des points à valider avant publication (marque, icône, valeurs fictives) figure dans la section « Remediation status » de [`../README.md`](../README.md).
 
-Signaler les problèmes de sécurité à `<security@example.com>` — ne jamais publier d'identifiants dans une issue publique.
+Signaler les problèmes de sécurité à `help@heimanhome.com` — ne jamais publier d'identifiants dans une issue publique.

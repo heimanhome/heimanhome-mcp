@@ -39,10 +39,10 @@
 
 ## 使用前必读
 
-`mcp.json` 与 `connector-meta.json` 中的 `https://smart-home-mcp.example.com/mcp` 是**示例占位地址**，直接安装连不上任何服务。必须：
+`mcp.json` 与 `connector-meta.json` 中的 `https://spmcp.heimanhome.com/mcp` 是**当前部署地址**，连接前请确认服务可访问。如自行部署，请按以下步骤处理：
 
 1. 部署公网 HTTPS 可访问的 MCP 服务端（Streamable HTTP + OAuth，RFC 9728 / 8414 / 7591 / 7636 / 7009），实现 `SKILL.md` 中的 39 个工具；
-2. 把两个 JSON 里的 `example.com` 替换为真实地址 `https://<域名>/mcp`；
+2. 如部署自有服务，把两个 JSON 里的地址改为自己的 HTTPS 地址；
 3. 确认 `auth_mode: server-side` 所需客户端版本（`minWorkbuddyVersion: 4.24.0`）；
 4. 向上游智能家居平台合法取得 `clientId` / `clientSecret` 与接入授权，凭据**只放服务端**，不写入本包；
 5. 校验：`python3 -m json.tool connector-meta.json`、`python3 -m json.tool mcp.json`。
@@ -65,7 +65,7 @@
 - **非官方声明**：本项目为第三方集成，非海曼 / WorkBuddy / CodeBuddy 官方产品，未获背书；MIT 不授予商标权。
 - **数据与隐私**：本包自身不收集、不存储、不传输个人数据；其指向的远端服务会处理家庭、设备、告警、成员等数据，**该服务的部署方是数据控制者**，需履行告知同意、最小必要、访问控制、存储期限、删除响应与跨境评估等义务。
 - **无担保**：按「现状」提供，不保证与上游平台或特定 MCP 客户端版本兼容。控制类工具的 `success` 只表示指令被接受，不等于设备已执行。
-- **安全上报**：`<security@example.com>`，请勿在公开 Issue 中粘贴凭据或漏洞细节。
+- **安全上报**：`help@heimanhome.com`，请勿在公开 Issue 中粘贴凭据或漏洞细节。
 - **完整且权威的文本**：`OPEN-SOURCE-STATEMENT.md`。
 
 ## 市场展示文案（`zh`）
@@ -85,6 +85,6 @@
 
 本次整改已完成：英文改为权威文档语言、新增 7 语言翻译、`SKILL.md` 英文化并保留多语言规则、版本号统一到 **1.1.0**、移除 `author` 对品牌方的署名与登录页内部来源字样、法律文件改为英文权威版、`i18n/` 纳入打包边界。
 
-**仍需人工确认**：品牌/商标授权、`icon.svg` 美术作品权属或替换、`example.com` 换真实域名、`LICENSE` / `NOTICE` / 声明 / README 中所有 `<...>` 占位替换、WorkBuddy 规范字段与 `i18n` 扩展对象的披露许可。完整清单见英文 [`../README.md`](../README.md) 的「Remediation status」。
+**仍需人工确认**：品牌/商标授权、`icon.svg` 美术作品权属或替换、部署地址与仓库地址复核、`LICENSE` / `NOTICE` / 声明 / README 中所有 `<...>` 占位替换、WorkBuddy 规范字段与 `i18n` 扩展对象的披露许可。完整清单见英文 [`../README.md`](../README.md) 的「Remediation status」。
 
 自研内容采用 MIT 许可，见 `LICENSE`；商标、`icon.svg` 与未随包发布的内容不在授权范围内，见 `NOTICE`。

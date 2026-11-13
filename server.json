@@ -1,17 +1,17 @@
 {
   "$schema": "https://static.modelcontextprotocol.io/schemas/2025-12-11/server.schema.json",
-  "name": "io.github.<OWNER>/heiman-smart-home",
+  "name": "io.github.heimanhome/heimanhome-mcp",
   "title": "Heiman Smart Home",
   "description": "Control and query Heiman smart home devices: lights, AC, curtains, climate, logs and scenes.",
   "repository": {
-    "url": "https://github.com/<OWNER>/<REPO>",
+    "url": "https://github.com/heimanhome/heimanhome-mcp.git",
     "source": "github"
   },
   "version": "1.0.0",
   "remotes": [
     {
       "type": "streamable-http",
-      "url": "https://<DEPLOY_DOMAIN>/mcp"
+      "url": "https://spmcp.heimanhome.com/mcp"
     }
   ]
 }

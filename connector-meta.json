@@ -155,7 +155,7 @@
     "auth_type": "mcp_oauth",
     "data": {
       "mcp_oauth": {
-        "server_url": "https://<DEPLOY_DOMAIN>/mcp",
+        "server_url": "https://spmcp.heimanhome.com/mcp",
         "scopes": "device:read device:control scene:read scene:execute security:control"
       }
     }

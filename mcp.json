@@ -2,7 +2,7 @@
   "mcpServers": {
     "heiman-smart-home": {
       "type": "streamableHttp",
-      "url": "https://<DEPLOY_DOMAIN>/mcp",
+      "url": "https://spmcp.heimanhome.com/mcp",
       "timeout": 30000
     }
   }

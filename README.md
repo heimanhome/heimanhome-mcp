@@ -47,7 +47,7 @@ The locale codes match `connector-meta.json` → `i18n.supported_locales`. `ar` 
 
 ## Before you use it
 
-`<DEPLOY_DOMAIN>` in `server.json` and `mcp.json`, and `<OWNER>` / `<REPO>` in `server.json`, are **placeholders**. Installing the bundle as-is connects to nothing. A public release requires a publicly reachable HTTPS deployment, real upstream credentials, and a completed `--check-release` run. See the next section.
+The bundle points to `https://spmcp.heimanhome.com/mcp` and is published at `https://github.com/heimanhome/heimanhome-mcp.git`. Connecting requires a publicly reachable HTTPS deployment, real upstream credentials, and a completed `--check-release` run. If you deploy your own server, replace the endpoint URL in `server.json`, `mcp.json` and `connector-meta.json`. See the next section.
 
 ---
 
@@ -57,7 +57,7 @@ The locale codes match `connector-meta.json` → `i18n.supported_locales`. `ar` 
 
 | Requirement | Setting |
 | --- | --- |
-| Public HTTPS origin (TLS terminated at a reverse proxy) | `MCP_PUBLIC_BASE_URL=https://<domain>` |
+| Public HTTPS origin (TLS terminated at a reverse proxy) | `MCP_PUBLIC_BASE_URL=https://spmcp.heimanhome.com` |
 | Real upstream account, never the mock backend | `HEIMAN_MOCK=0`, `HEIMAN_CLIENT_ID`, `HEIMAN_CLIENT_SECRET` |
 | Multi-instance-safe encrypted state | `STORE_BACKEND=sqlite|redis` + `STORE_ENCRYPTION_KEYS` |
 | Tightened client allowlist | `OAUTH_ALLOWED_REDIRECT_HOSTS` (default covers mainstream clients; avoid `*`) |
@@ -68,11 +68,11 @@ The locale codes match `connector-meta.json` → `i18n.supported_locales`. `ar` 
 ### 2. Render all publishing artifacts
 
 ```bash
-export MCP_PUBLIC_BASE_URL=https://<domain>
+export MCP_PUBLIC_BASE_URL=https://spmcp.heimanhome.com
 python -m smart_home_mcp --render-publish
 ```
 
-This rewrites the remote URL in `server.json`, `mcp.json` and `connector-meta.json` in one pass and is idempotent. Then replace `io.github.<OWNER>/...` and the repository URL in `server.json` with a namespace and repository you actually control (the Registry verifies namespace ownership; it does **not** verify the remote URL).
+This rewrites the remote URL in `server.json`, `mcp.json` and `connector-meta.json` in one pass and is idempotent. `server.json` uses the namespace `io.github.heimanhome/heimanhome-mcp`; only the owner of that namespace can publish it (the Registry verifies namespace ownership; it does **not** verify the remote URL).
 
 ### 3. Publish to the MCP Registry
 
@@ -89,17 +89,17 @@ mcp-publisher publish
 `mcp.json` is the generic `mcpServers` form used by Claude Desktop, Cursor, Cline, Windsurf, Zed, VS Code + GitHub Copilot and MCP Inspector:
 
 ```json
-{ "mcpServers": { "heiman-smart-home": { "type": "streamableHttp", "url": "https://<domain>/mcp" } } }
+{ "mcpServers": { "heiman-smart-home": { "type": "streamableHttp", "url": "https://spmcp.heimanhome.com/mcp" } } }
 ```
 
 Clients that only speak stdio can bridge to the remote endpoint with `mcp-remote`:
 
 ```json
 { "mcpServers": { "heiman-smart-home": {
-  "command": "npx", "args": ["-y", "mcp-remote", "https://<domain>/mcp"] } } }
+  "command": "npx", "args": ["-y", "mcp-remote", "https://spmcp.heimanhome.com/mcp"] } } }
 ```
 
-Claude Code: `claude mcp add --transport http heiman-smart-home https://<domain>/mcp`.
+Claude Code: `claude mcp add --transport http heiman-smart-home https://spmcp.heimanhome.com/mcp`.
 Hosted runtimes (ChatGPT connectors / apps, Claude.ai connectors, Copilot Studio, OpenAI Responses API `mcp` tool, Gemini CLI) use their own connector registration UI or API with the same URL; they do not consume `connector-meta.json`.
 
 ### 5. Client registration (three supported tracks)
@@ -178,8 +178,7 @@ Still requires a human decision before publishing (do not assume these are done)
 
 - [ ] Trademark / brand authorization for "Heiman" / 海曼, or a neutral rename
 - [ ] Rights to the embedded artwork in `icon.svg`, or replacement with a self-created icon
-- [ ] `<DEPLOY_DOMAIN>` → real HTTPS domain, `<OWNER>` / `<REPO>` → verified namespace and public repository (or a prominent "sample only" notice)
-- [ ] Replace every `<...>` placeholder in `LICENSE`, `NOTICE`, `OPEN-SOURCE-STATEMENT.md` and the READMEs (copyright holder, maintainer, security mailbox, repository URL)
+- [ ] Replace the remaining `<...>` placeholders in `LICENSE` and `NOTICE` (copyright holder, maintaining organization); the endpoint, contact mailbox and repository URL are already set
 - [ ] Confirm with the platform whether the custom `i18n` extension object in `connector-meta.json` is acceptable for marketplace submission
 - [ ] Confirm disclosure of WorkBuddy spec fields (`auth_mode`, `auth_type`, `minWorkbuddyVersion`)
 
@@ -189,4 +188,4 @@ Still requires a human decision before publishing (do not assume these are done)
 
 Original content in this bundle is MIT licensed (see `LICENSE`). Trademarks, the `icon.svg` artwork and everything not shipped with this bundle are outside that license — see `NOTICE` and `OPEN-SOURCE-STATEMENT.md`.
 
-Report security issues to `<security@example.com>`; never post credentials or vulnerability details in a public issue.
+Report security issues to `help@heimanhome.com`; never post credentials or vulnerability details in a public issue.

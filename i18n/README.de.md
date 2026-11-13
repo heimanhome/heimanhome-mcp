@@ -37,10 +37,10 @@ Pfade beziehen sich auf das Repository-Stammverzeichnis.
 
 ## Vor der Nutzung
 
-`https://smart-home-mcp.example.com/mcp` in `mcp.json` und `connector-meta.json` ist ein **Platzhalter**. Ohne Änderung verbindet sich das Paket mit nichts. Erforderlich:
+`https://spmcp.heimanhome.com/mcp` in `mcp.json` und `connector-meta.json` ist die **aktuell bereitgestellte Adresse**. Vor dem Verbinden muss der Dienst erreichbar sein. Erforderlich:
 
 1. Einen öffentlich per HTTPS erreichbaren MCP-Server bereitstellen (Streamable HTTP + OAuth, RFC 9728 / 8414 / 7591 / 7636 / 7009) mit den 39 Tools aus `SKILL.md`.
-2. `example.com` in beiden JSON-Dateien durch die echte Adresse `https://<Domain>/mcp` ersetzen.
+2. Bei einem eigenen Server die Adresse in beiden JSON-Dateien durch die eigene HTTPS-Adresse ersetzen.
 3. Die für `auth_mode: server-side` nötige Client-Version prüfen (`minWorkbuddyVersion: 4.24.0`).
 4. `clientId` / `clientSecret` und die Integrationsfreigabe rechtmäßig von der Upstream-Plattform einholen; Zugangsdaten gehören **nur auf den Server**.
 5. Beide Dateien prüfen: `python3 -m json.tool connector-meta.json` und `python3 -m json.tool mcp.json`.
@@ -80,4 +80,4 @@ Quelle: `connector-meta.json` → `i18n.locales.de`.
 
 Eigene Inhalte stehen unter MIT (siehe `LICENSE`); Marken, `icon.svg` und nicht mitgelieferte Inhalte sind ausgenommen (siehe `NOTICE`). Der Stand der Veröffentlichungs-Prüfpunkte (Markenfreigabe, Icon-Rechte, Platzhalter) steht im Abschnitt „Remediation status" der englischen [`../README.md`](../README.md).
 
-Sicherheitsmeldungen an `<security@example.com>` — niemals Zugangsdaten in öffentlichen Issues posten.
+Sicherheitsmeldungen an `help@heimanhome.com` — niemals Zugangsdaten in öffentlichen Issues posten.

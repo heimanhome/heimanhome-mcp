@@ -4,7 +4,7 @@
 > Version: 1.1.0 | Date: 2026-11-13
 > This statement, together with `LICENSE` and `NOTICE`, forms the legal documentation of this public release.
 
-> **Fill before publishing:** replace every `<...>` placeholder (copyright holder, maintaining organization, contact and security mailboxes, repository URL, real service domain) and obtain Legal / Brand approval.
+> **Before publishing:** fill the remaining `<...>` placeholders (copyright holder, maintaining organization) and obtain Legal / Brand approval.
 >
 > **Language:** English is authoritative. Translations under `i18n/` cover `README.md` only and are provided for convenience; the English text prevails in case of conflict.
 
@@ -48,9 +48,9 @@ Boundaries: MIT covers only the files in §2; it does not cover trademarks, the 
 
 ## 4. Prerequisites for use
 
-`mcp.json` → `url` and `connector-meta.json` → `server_auth.data.mcp_oauth.server_url` currently contain the **placeholder** `https://smart-home-mcp.example.com/mcp`.
+`mcp.json` → `url` and `connector-meta.json` → `server_auth.data.mcp_oauth.server_url` point to the deployed HTTPS endpoint `https://spmcp.heimanhome.com/mcp`.
 
-- Installing this bundle as-is **cannot connect to any service**. Replace it with a publicly reachable HTTPS MCP server address.
+- Connecting requires that endpoint to be publicly reachable. A deployer running their own server must replace the address in both files with a publicly reachable HTTPS MCP server address.
 - The server must implement MCP Streamable HTTP and OAuth (RFC 9728 / 8414 / 7591 / 7636 / 7009) and support the five scopes `device:read`, `device:control`, `scene:read`, `scene:execute`, `security:control`.
 - `clientId` / `clientSecret`, user accounts and tokens for the upstream smart home platform must be obtained lawfully by the deployer. This bundle does not supply, embed or apply for them.
 - The deployer must obtain integration authorization from the upstream platform and comply with its terms of service, developer agreement, quota limits and data-use restrictions. Upstream API changes may break this bundle; no continuing compatibility is warranted.
@@ -83,7 +83,7 @@ The remote service described here offers write operations including device contr
 
 ## 8. Security reporting
 
-- Channel: `<security@example.com>` (replace before publishing).
+- Channel: `help@heimanhome.com`.
 - Include the affected version, reproduction steps, impact and a suggested fix.
 - **Never paste** real `client_secret`, access/refresh tokens, passwords, verification codes or internal domains into public issues, PRs or discussions.
 - For vulnerabilities involving the upstream platform, also follow that platform's security process.
@@ -106,7 +106,7 @@ The remote service described here offers write operations including device contr
 
 - Users must comply with applicable export control, sanctions, industry regulation and product compliance requirements.
 - This statement is not legal advice. Have Legal / Brand / Compliance review `LICENSE`, `NOTICE`, this statement and all brand usage before publication.
-- Repository: `<https://github.com/<org>/<repo>>`; maintainer: `<maintaining organization>`.
+- Repository: `https://github.com/heimanhome/heimanhome-mcp.git`; maintainer: `<maintaining organization>`.
 - Changes are recorded in Release Notes.
 
 ---
