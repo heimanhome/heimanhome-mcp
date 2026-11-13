@@ -5,7 +5,7 @@ This directory is the **public distribution bundle** for a standard, vendor-neut
 The server speaks MCP `2026-07-28` plus the earlier `initialize`-era revisions, Streamable HTTP and stdio, and OAuth 2.1 with PKCE. **It is not WorkBuddy-only**: `connector-meta.json` is merely one host-specific descriptor; `server.json` is the vendor-neutral Registry listing.
 
 > **This directory contains connector / registry metadata only, not the server implementation.**
-> This is a third-party integration. It is **not an official Heiman product, nor an official WorkBuddy / CodeBuddy / Anthropic / OpenAI / Microsoft product**, and is endorsed by none of them. See `OPEN-SOURCE-STATEMENT.md`.
+> This is a third-party integration. It is **not an official Heiman product, nor an official WorkBuddy / CodeBuddy / Anthropic / OpenAI / Microsoft product**, and is endorsed by none of them. Use of the "Heiman" / 海曼 marks has been authorized by the trademark holder. See `OPEN-SOURCE-STATEMENT.md`.
 
 **Documentation language:** English is authoritative. Translations are provided for reference; if a translation conflicts with the English text, the English text prevails. Legal texts (`LICENSE`, `NOTICE`, `OPEN-SOURCE-STATEMENT.md`) are English-only and authoritative.
 
@@ -122,7 +122,7 @@ python -m smart_home_mcp --check-release
 
 Exits non-zero while any blocker remains (local/Mock credentials, single-instance JSON store, missing encryption keys, placeholder URLs, Registry namespace/repository, description length, version drift, mismatched artifact URLs). Wire it into CI before `mcp-publisher publish`. `python -m pytest -q tests/test_public_compat.py` covers the cross-client registration, callback, `resource` and publishing checks.
 
-If brand authorization has not been obtained, replace the names with a neutral project name, swap `icon.svg` for a self-created icon, and update both JSON files, `SKILL.md` and all translated READMEs.
+Use of the "Heiman" / 海曼 marks has been authorized by the trademark holder. Rights to the artwork embedded in `icon.svg` remain unconfirmed; if they cannot be confirmed, replace the icon with self-created artwork.
 
 ---
 
@@ -173,12 +173,12 @@ Issues resolved in this revision:
 | Legal file naming | The former Chinese-named statement file became `OPEN-SOURCE-STATEMENT.md`; legal texts are English-only authoritative |
 | Packaging | `i18n/` explicitly included for GitHub and excluded from marketplace submissions |
 | Skill rules | Multilingual response rules, the 8-language utterance table and the language-independent tool chain are preserved in English |
+| Trademark authorization | Use of the "Heiman" / 海曼 marks confirmed by the rights holder; the "third-party integration / not an official product / no endorsement" disclaimer is retained |
+| Copyright and maintainer | `LICENSE` and `NOTICE` name HeimanHome as copyright holder and maintainer; the repository URL, endpoint and contact mailbox are set |
 
 Still requires a human decision before publishing (do not assume these are done):
 
-- [ ] Trademark / brand authorization for "Heiman" / 海曼, or a neutral rename
 - [ ] Rights to the embedded artwork in `icon.svg`, or replacement with a self-created icon
-- [ ] Replace the remaining `<...>` placeholders in `LICENSE` and `NOTICE` (copyright holder, maintaining organization); the endpoint, contact mailbox and repository URL are already set
 - [ ] Confirm with the platform whether the custom `i18n` extension object in `connector-meta.json` is acceptable for marketplace submission
 - [ ] Confirm disclosure of WorkBuddy spec fields (`auth_mode`, `auth_type`, `minWorkbuddyVersion`)
 

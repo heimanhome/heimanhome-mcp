@@ -45,7 +45,7 @@ Pfade beziehen sich auf das Repository-Stammverzeichnis.
 4. `clientId` / `clientSecret` und die Integrationsfreigabe rechtmäßig von der Upstream-Plattform einholen; Zugangsdaten gehören **nur auf den Server**.
 5. Beide Dateien prüfen: `python3 -m json.tool connector-meta.json` und `python3 -m json.tool mcp.json`.
 
-Ohne Markenfreigabe: neutralen Projektnamen und ein selbst erstelltes Icon verwenden und beide JSON-Dateien, `SKILL.md` sowie alle Übersetzungen anpassen.
+Die Nutzung der Marken „Heiman" / 海曼 wurde vom Rechteinhaber genehmigt. Die Rechte an der eingebetteten Grafik in `icon.svg` sind weiterhin ungeklärt; falls sie nicht bestätigt werden, durch ein selbst erstelltes Icon ersetzen.
 
 ## Scopes
 
@@ -78,6 +78,6 @@ Quelle: `connector-meta.json` → `i18n.locales.de`.
 
 ## Lizenz und Kontakt
 
-Eigene Inhalte stehen unter MIT (siehe `LICENSE`); Marken, `icon.svg` und nicht mitgelieferte Inhalte sind ausgenommen (siehe `NOTICE`). Der Stand der Veröffentlichungs-Prüfpunkte (Markenfreigabe, Icon-Rechte, Platzhalter) steht im Abschnitt „Remediation status" der englischen [`../README.md`](../README.md).
+Eigene Inhalte stehen unter MIT (siehe `LICENSE`); Marken, `icon.svg` und nicht mitgelieferte Inhalte sind ausgenommen (siehe `NOTICE`). Die Markenfreigabe ist bestätigt und die Platzhalter sind ausgefüllt; die verbleibenden offenen Punkte stehen im Abschnitt „Remediation status" der englischen [`../README.md`](../README.md).
 
 Sicherheitsmeldungen an `help@heimanhome.com` — niemals Zugangsdaten in öffentlichen Issues posten.

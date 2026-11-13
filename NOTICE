@@ -2,12 +2,12 @@ NOTICE
 ======
 
 Heiman Smart Home Connector (connector/ metadata bundle)
-Copyright (c) 2026 <copyright holder name - replace before publishing>
+Copyright (c) 2026 HeimanHome
 
 This file defines the ownership and licensing boundaries that apply in addition
-to the MIT License in the accompanying LICENSE file. Replace the remaining
-<...> placeholders (copyright holder, maintainer) and have Legal / Brand
-review this file before publication.
+to the MIT License in the accompanying LICENSE file. Use of the "Heiman" /
+海曼 marks in this bundle has been authorized by the trademark holder;
+have Legal / Brand review this file before publication.
 
 English is the authoritative language of this NOTICE.
 
@@ -55,14 +55,15 @@ of their respective owners. The MIT License grants no trademark rights.
 
 This bundle is metadata describing a third-party integration. It is not
 an official product of any of the above parties and has received no
-endorsement, certification or authorization from them. Brand names appear
-for nominative, descriptive use only, to identify the integration target
+endorsement or certification from them. Use of the "Heiman" / 海曼 marks
+has been authorized by the trademark holder. Brand names appear for
+nominative, descriptive use only, to identify the integration target
 and compatible clients.
 
-If brand authorization has not been obtained, the publisher must replace
-those names with a neutral project name and a self-created icon, and
-update connector-meta.json, mcp.json, SKILL.md and all READMEs
-accordingly.
+That authorization covers the "Heiman" / 海曼 marks only. It does not
+cover the embedded artwork in icon.svg, any other third-party mark, or
+confer official-product status; rights to the embedded artwork remain
+to be confirmed (see section 1).
 
 
 4. Upstream platform and integration authorization
@@ -121,7 +122,7 @@ platform specification and do not include legal files, READMEs or i18n/.
 
 9. Contact
 ----------
-Maintainer:  <maintaining organization>
+Maintainer:  HeimanHome
 Repository:  https://github.com/heimanhome/heimanhome-mcp.git
 Security:    help@heimanhome.com  (never post credentials or
              vulnerability details in a public issue)

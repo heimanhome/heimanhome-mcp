@@ -47,7 +47,7 @@ Os caminhos são relativos à raiz do repositório.
 4. Obter legalmente `clientId` / `clientSecret` e a autorização de integração junto à plataforma de origem; as credenciais ficam **apenas no servidor**.
 5. Validar os dois arquivos: `python3 -m json.tool connector-meta.json` e `python3 -m json.tool mcp.json`.
 
-Sem autorização de marca: usar um nome de projeto neutro e um ícone próprio, atualizando os dois JSON, `SKILL.md` e todas as traduções.
+O uso das marcas «Heiman» / 海曼 foi autorizado pelo titular dos direitos. Os direitos da imagem embutida em `icon.svg` ainda precisam ser confirmados; caso não sejam, substitua-a por um ícone próprio.
 
 ## Scopes
 
@@ -80,6 +80,6 @@ Fonte: `connector-meta.json` → `i18n.locales.pt`.
 
 ## Licença e contato
 
-O conteúdo original está sob MIT (veja `LICENSE`); marcas, `icon.svg` e conteúdos não distribuídos ficam de fora (veja `NOTICE`). Os pontos pendentes antes da publicação (marca, ícone, marcadores de posição) estão na seção «Remediation status» de [`../README.md`](../README.md).
+O conteúdo original está sob MIT (veja `LICENSE`); marcas, `icon.svg` e conteúdos não distribuídos ficam de fora (veja `NOTICE`). A autorização de marca foi confirmada e os marcadores de posição foram preenchidos; os pontos ainda pendentes estão na seção «Remediation status» de [`../README.md`](../README.md).
 
 Problemas de segurança: `help@heimanhome.com` — nunca publique credenciais em issues públicas.

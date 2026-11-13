@@ -4,7 +4,7 @@
 > Version: 1.1.0 | Date: 2026-11-13
 > This statement, together with `LICENSE` and `NOTICE`, forms the legal documentation of this public release.
 
-> **Before publishing:** fill the remaining `<...>` placeholders (copyright holder, maintaining organization) and obtain Legal / Brand approval.
+> **Trademark status:** use of the "Heiman" / 海曼 marks in this bundle has been authorized by the rights holder. Legal / Brand / Compliance review is recommended before publication.
 >
 > **Language:** English is authoritative. Translations under `i18n/` cover `README.md` only and are provided for convenience; the English text prevails in case of conflict.
 
@@ -16,7 +16,7 @@ This repository publishes **a Connector metadata bundle only**: descriptors tell
 
 **This repository contains no server implementation.** Server source code, tests, scripts, upstream API contract documents, the authorization login page and their brand assets remain private, are not distributed here, and are outside the scope of this statement.
 
-This is a third-party integration. It is **not an official Heiman product, nor an official WorkBuddy / CodeBuddy product**, and has received no endorsement, certification or authorization from either party. Brand names identify the integration target only and imply no affiliation or partnership.
+This is a third-party integration. It is **not an official Heiman product, nor an official WorkBuddy / CodeBuddy product**, and has received no endorsement or certification from either party. Use of the "Heiman" / 海曼 marks has been authorized by the trademark holder; brand names identify the integration target only and imply no affiliation or partnership.
 
 ---
 
@@ -61,7 +61,7 @@ Boundaries: MIT covers only the files in §2; it does not cover trademarks, the 
 
 "Heiman", 海曼 and their device marks, "WorkBuddy", "CodeBuddy", "Copilot" and related marks belong to their respective owners. Their appearance here is nominative and descriptive only.
 
-No one may infer a right to use those marks from the MIT License; obtain written authorization instead. Without authorization, the publisher must switch to a neutral name and a self-created icon and update `connector-meta.json`, `mcp.json`, `SKILL.md` and every README accordingly.
+No one may infer a right to use those marks from the MIT License. Use of the "Heiman" / 海曼 marks in this bundle has been authorized by the trademark holder; that authorization does not cover the embedded artwork in `icon.svg` or any other third-party mark, and does not make this bundle an official product.
 
 ---
 
@@ -106,7 +106,7 @@ The remote service described here offers write operations including device contr
 
 - Users must comply with applicable export control, sanctions, industry regulation and product compliance requirements.
 - This statement is not legal advice. Have Legal / Brand / Compliance review `LICENSE`, `NOTICE`, this statement and all brand usage before publication.
-- Repository: `https://github.com/heimanhome/heimanhome-mcp.git`; maintainer: `<maintaining organization>`.
+- Repository: `https://github.com/heimanhome/heimanhome-mcp.git`; maintainer: `HeimanHome`.
 - Changes are recorded in Release Notes.
 
 ---
