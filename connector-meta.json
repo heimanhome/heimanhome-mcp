@@ -1,0 +1,163 @@
+{
+  "name": "Heiman Smart Home",
+  "name_zh": "海曼智能家居",
+  "name_en": "Heiman Smart Home",
+  "description": "Control and query Heiman smart home devices with natural language: lights, AC, curtains, climate, logs, rooms and scenes.",
+  "description_zh": "用自然语言查询与控制海曼智能家居：灯光、空调、窗帘、温湿度、设备日志、家庭房间与场景联动。",
+  "description_en": "Control and query Heiman smart home devices with natural language: lights, AC, curtains, climate, logs, rooms and scenes.",
+  "source": "heiman-smart-home",
+  "type": "mcp",
+  "auth_mode": "server-side",
+  "version": "1.1.0",
+  "minWorkbuddyVersion": "4.24.0",
+  "examples_zh": [
+    "把客厅主灯调到 50% 亮度",
+    "客厅现在多少度？湿度怎么样？",
+    "打开客厅空调并设定为 26 度",
+    "把窗帘关上，然后执行回家模式",
+    "统计最近 24 小时客厅的平均温度和湿度",
+    "每天 23 点自动关客厅灯",
+    "温度高于 28 度时打开客厅空调并设为 26 度"
+  ],
+  "examples_en": [
+    "Set the living room light brightness to 50%",
+    "What is the current temperature and humidity in the living room?",
+    "Turn on the living room AC and set it to 26 degrees",
+    "Close the curtains and run the Home scene",
+    "Show the average temperature and humidity of the last 24 hours",
+    "Create an automation that turns off the living room light every day at 11 pm",
+    "When the temperature is above 28 degrees, turn on the AC and set it to 26"
+  ],
+  "i18n": {
+    "_comment": "The WorkBuddy platform currently consumes only the top-level *_zh/*_en fields; this object is the project-owned source of truth for 8-locale copy, shared by the Skill, the login page and packaging scripts. Locales other than zh/en fall back to the top-level English name/description.",
+    "default_locale": "en",
+    "supported_locales": [
+      "en",
+      "de",
+      "fr",
+      "es",
+      "pt",
+      "ar",
+      "ru",
+      "zh"
+    ],
+    "rtl_locales": [
+      "ar"
+    ],
+    "locales": {
+      "en": {
+        "name": "Heiman Smart Home",
+        "description": "Control and query Heiman smart home devices with natural language: lights, AC, curtains, climate, logs, rooms and scenes.",
+        "examples": [
+          "Set the living room light brightness to 50%",
+          "What is the current temperature and humidity in the living room?",
+          "Turn on the living room AC and set it to 26 degrees",
+          "Close the curtains and run the Home scene",
+          "Show the average temperature and humidity of the last 24 hours",
+          "Create an automation that turns off the living room light every day at 11 pm",
+          "When the temperature is above 28 degrees, turn on the AC and set it to 26"
+        ]
+      },
+      "de": {
+        "name": "Heiman Smart Home",
+        "description": "Heiman-Smart-Home-Geräte in natürlicher Sprache steuern und abfragen: Licht, Klima, Vorhänge, Temperatur, Protokolle, Räume und Szenen.",
+        "examples": [
+          "Stelle die Helligkeit des Wohnzimmerlichts auf 50 %",
+          "Wie hoch sind Temperatur und Luftfeuchtigkeit im Wohnzimmer?",
+          "Schalte die Klimaanlage im Wohnzimmer ein und stelle sie auf 26 °C",
+          "Schließe die Vorhänge und starte die Szene „Zuhause“",
+          "Zeige die Durchschnittstemperatur und -luftfeuchtigkeit der letzten 24 Stunden",
+          "Erstelle eine Automation, die jeden Tag um 23 Uhr das Wohnzimmerlicht ausschaltet",
+          "Schalte bei über 28 °C die Klimaanlage ein und stelle sie auf 26 °C"
+        ]
+      },
+      "fr": {
+        "name": "Heiman Smart Home",
+        "description": "Pilotez et interrogez vos appareils Heiman en langage naturel : lumières, climatisation, rideaux, température, journaux, pièces et scénarios.",
+        "examples": [
+          "Règle la luminosité du luminaire du salon à 50 %",
+          "Quelle est la température et l'humidité actuelles dans le salon ?",
+          "Allume la climatisation du salon et règle-la sur 26 °C",
+          "Ferme les rideaux puis lance le scénario « Retour à la maison »",
+          "Affiche la température et l'humidité moyennes des dernières 24 heures",
+          "Crée une automatisation qui éteint la lumière du salon chaque jour à 23 h",
+          "Quand la température dépasse 28 °C, allume la climatisation et règle-la sur 26 °C"
+        ]
+      },
+      "es": {
+        "name": "Heiman Smart Home",
+        "description": "Controla y consulta los dispositivos Heiman en lenguaje natural: luces, climatización, cortinas, temperatura, registros, estancias y escenas.",
+        "examples": [
+          "Ajusta el brillo de la luz del salón al 50 %",
+          "¿Cuál es la temperatura y la humedad actuales del salón?",
+          "Enciende el aire acondicionado del salón y ajústalo a 26 °C",
+          "Cierra las cortinas y ejecuta la escena «En casa»",
+          "Muestra la temperatura y la humedad medias de las últimas 24 horas",
+          "Crea una automatización que apague la luz del salón cada día a las 23:00",
+          "Cuando la temperatura supere los 28 °C, enciende el aire acondicionado y ajústalo a 26 °C"
+        ]
+      },
+      "pt": {
+        "name": "Heiman Smart Home",
+        "description": "Controle e consulte os dispositivos Heiman em linguagem natural: luzes, ar-condicionado, cortinas, temperatura, registros, cômodos e cenários.",
+        "examples": [
+          "Ajuste o brilho da luz da sala para 50%",
+          "Qual é a temperatura e a umidade atuais da sala?",
+          "Ligue o ar-condicionado da sala e ajuste para 26 °C",
+          "Feche as cortinas e execute o cenário \"Em casa\"",
+          "Mostre a temperatura e a umidade médias das últimas 24 horas",
+          "Crie uma automação que desligue a luz da sala todos os dias às 23h",
+          "Quando a temperatura passar de 28 °C, ligue o ar-condicionado e ajuste para 26 °C"
+        ]
+      },
+      "ar": {
+        "name": "Heiman Smart Home",
+        "description": "تحكّم في أجهزة هايمان المنزلية الذكية واستفسر عنها باللغة الطبيعية: الإضاءة، التكييف، الستائر، الحرارة والرطوبة، السجلات، الغرف والمشاهد.",
+        "examples": [
+          "اضبط سطوع مصباح غرفة المعيشة على ٥٠٪",
+          "ما درجة الحرارة والرطوبة الحالية في غرفة المعيشة؟",
+          "شغّل مكيف غرفة المعيشة واضبطه على ٢٦ درجة",
+          "أغلق الستائر ثم شغّل مشهد «العودة إلى المنزل»",
+          "اعرض متوسط درجة الحرارة والرطوبة خلال آخر ٢٤ ساعة",
+          "أنشئ أتمتة تُطفئ ضوء غرفة المعيشة كل يوم الساعة ١١ مساءً",
+          "عندما تتجاوز الحرارة ٢٨ درجة، شغّل المكيف واضبطه على ٢٦ درجة"
+        ]
+      },
+      "ru": {
+        "name": "Heiman Smart Home",
+        "description": "Управляйте устройствами умного дома Heiman и запрашивайте данные на естественном языке: свет, климат, шторы, температура, журналы, комнаты и сценарии.",
+        "examples": [
+          "Установите яркость света в гостиной на 50 %",
+          "Какая сейчас температура и влажность в гостиной?",
+          "Включите кондиционер в гостиной и установите 26 °C",
+          "Закройте шторы и запустите сценарий «Дома»",
+          "Покажите среднюю температуру и влажность за последние 24 часа",
+          "Создай автоматизацию, которая каждый день в 23:00 выключает свет в гостиной",
+          "Когда температура выше 28 °C, включи кондиционер и установи 26 °C"
+        ]
+      },
+      "zh": {
+        "name": "海曼智能家居",
+        "description": "用自然语言查询与控制海曼智能家居：灯光、空调、窗帘、温湿度、设备日志、家庭房间与场景联动。",
+        "examples": [
+          "把客厅主灯调到 50% 亮度",
+          "客厅现在多少度？湿度怎么样？",
+          "打开客厅空调并设定为 26 度",
+          "把窗帘关上，然后执行回家模式",
+          "统计最近 24 小时客厅的平均温度和湿度",
+          "每天 23 点自动关客厅灯",
+          "温度高于 28 度时打开客厅空调并设为 26 度"
+        ]
+      }
+    }
+  },
+  "server_auth": {
+    "auth_type": "mcp_oauth",
+    "data": {
+      "mcp_oauth": {
+        "server_url": "https://<DEPLOY_DOMAIN>/mcp",
+        "scopes": "device:read device:control scene:read scene:execute security:control"
+      }
+    }
+  }
+}

@@ -1,0 +1,126 @@
+NOTICE
+======
+
+Heiman Smart Home Connector (connector/ metadata bundle)
+Copyright (c) 2026 <copyright holder name - replace before publishing>
+
+This file defines the ownership and licensing boundaries that apply in addition
+to the MIT License in the accompanying LICENSE file. Replace every <...>
+placeholder and have Legal / Brand review this file before publication.
+
+English is the authoritative language of this NOTICE.
+
+
+1. Scope of the MIT License
+---------------------------
+The MIT License covers these files in this bundle:
+  - connector-meta.json
+  - mcp.json
+  - skills/heimanhome-skill/SKILL.md
+  - README.md, OPEN-SOURCE-STATEMENT.md, this NOTICE
+  - i18n/README.<locale>.md (translated documentation)
+
+The MIT License does NOT cover:
+  - the base64-embedded PNG artwork inside icon.svg (copyright and
+    redistribution rights not confirmed)
+  - any third-party trademark, trade name or brand mark
+  - the upstream platform's API definitions, API documentation and
+    server-side implementation
+
+Server source code, tests, scripts, upstream API contract documents, the
+authorization login page and its brand images are NOT shipped with this
+bundle and are outside both this NOTICE and the LICENSE. Their paths and
+names are deliberately not listed here so that this notice does not
+disclose the structure of a private repository.
+
+
+2. Nature of this bundle
+------------------------
+This bundle contains connector metadata only: it describes how an MCP
+client discovers and connects to a remote MCP service. It contains no
+server implementation, no executable backend code, no credentials and
+no user data.
+
+The URL https://smart-home-mcp.example.com/mcp in mcp.json and
+connector-meta.json is a PLACEHOLDER. The deployer must replace it with
+the address of their own HTTPS server before the bundle is usable.
+
+
+3. Trademarks and names
+-----------------------
+"Heiman", 海曼 and their device marks, together with "WorkBuddy",
+"CodeBuddy", "Copilot" and related marks, are trademarks or trade names
+of their respective owners. The MIT License grants no trademark rights.
+
+This bundle is metadata describing a third-party integration. It is not
+an official product of any of the above parties and has received no
+endorsement, certification or authorization from them. Brand names appear
+for nominative, descriptive use only, to identify the integration target
+and compatible clients.
+
+If brand authorization has not been obtained, the publisher must replace
+those names with a neutral project name and a self-created icon, and
+update connector-meta.json, mcp.json, SKILL.md and all READMEs
+accordingly.
+
+
+4. Upstream platform and integration authorization
+-------------------------------------------------
+The remote service referenced by this bundle calls an upstream smart home
+platform over HTTP. Upstream API definitions, documentation and server
+source code are not assets of this project and are not distributed here.
+
+clientId / clientSecret / user accounts / access tokens must be obtained
+lawfully from the upstream platform by the deployer. The deployer is
+responsible for complying with the upstream terms of service, developer
+agreement, quota limits and data-use restrictions, and for confirming
+that the integration itself is authorized.
+
+
+5. Third-party specifications and references
+--------------------------------------------
+Fields in this bundle reference the following public specifications.
+The specification texts remain copyrighted by their respective bodies:
+  - WorkBuddy Connector specification  https://open.workbuddy.cn/docs/connector
+  - Model Context Protocol            https://modelcontextprotocol.io
+  - RFC 9728 / 8414 / 7591 / 7636 / 7009 (IETF)
+
+Disclosure of specification fields such as auth_mode: server-side,
+auth_type: mcp_oauth and minWorkbuddyVersion must be confirmed with the
+respective party.
+
+
+6. Data and privacy
+-------------------
+This bundle itself collects, stores and transmits no personal data. The
+remote MCP service it points to may process homes, rooms, devices,
+alarms, household members and other data that can contain personal
+information. THE DEPLOYER OF THAT SERVICE IS THE DATA CONTROLLER and must
+handle notice and consent, data minimization, access control, retention,
+deletion requests, audit logging and cross-border transfer assessments.
+
+
+7. Localization
+---------------
+English is authoritative for README.md, SKILL.md, NOTICE, LICENSE and
+OPEN-SOURCE-STATEMENT.md. Files under i18n/ are convenience translations
+of README.md only; in case of conflict the English text prevails. The
+source of truth for localized listing copy is connector-meta.json ->
+i18n.locales. Arabic (ar) is a right-to-left locale; code blocks, tool
+names and JSON remain LTR.
+
+
+8. Packaging boundary
+---------------------
+For a GitHub release, keep LICENSE, NOTICE, OPEN-SOURCE-STATEMENT.md,
+README.md and i18n/ in this directory. For a WorkBuddy Connector
+marketplace submission, ship only the metadata files required by the
+platform specification and do not include legal files, READMEs or i18n/.
+
+
+9. Contact
+----------
+Maintainer:  <maintaining organization>
+Repository:  <https://github.com/<org>/<repo>>
+Security:    <security@example.com>  (never post credentials or
+             vulnerability details in a public issue)
