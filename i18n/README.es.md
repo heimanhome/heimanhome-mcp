@@ -1,83 +1,104 @@
-# Heiman Smart Home Connector — Español
+# Heiman Smart Home MCP — Guía de uso (Español)
 
-Un **paquete de metadatos de conector MCP** para clientes compatibles con WorkBuddy / CodeBuddy. Permite a un asistente de IA consultar y controlar dispositivos del hogar inteligente en lenguaje natural: luces, climatización, cortinas, temperatura y humedad, registros de dispositivos, hogares y estancias, escenas, capacidades de los dispositivos, alarma, avisos e información de firmware (solo lectura).
+Consulta y controla dispositivos del hogar inteligente en lenguaje natural con un asistente de IA: luces, climatización, cortinas, temperatura y humedad, registros de dispositivos, estancias, escenas y alarma.
 
-> **Este repositorio contiene únicamente metadatos del conector, no la implementación del servidor.**
-> Es una integración de terceros: **no es un producto oficial de Heiman ni de WorkBuddy / CodeBuddy**, y no cuenta con el respaldo ni la certificación de ninguna de esas partes. Véase `OPEN-SOURCE-STATEMENT.md`.
-
-**Idioma:** el inglés es la versión autoritativa. Esta traducción es orientativa; en caso de discrepancia prevalece [`../README.md`](../README.md). Los textos legales (`LICENSE`, `NOTICE`, `OPEN-SOURCE-STATEMENT.md`) solo son vinculantes en inglés.
-
-## Idiomas
-
-| Idioma | Código | Documento |
-| --- | --- | --- |
-| English (autoritativo) | `en` | [`../README.md`](../README.md) |
-| Deutsch | `de` | [`README.de.md`](README.de.md) |
-| Français | `fr` | [`README.fr.md`](README.fr.md) |
-| Español | `es` | `README.es.md` |
-| Português | `pt` | [`README.pt.md`](README.pt.md) |
-| العربية (RTL) | `ar` | [`README.ar.md`](README.ar.md) |
-| Русский | `ru` | [`README.ru.md`](README.ru.md) |
-| 简体中文 | `zh` | [`README.zh.md`](README.zh.md) |
-
-Los códigos coinciden con `connector-meta.json` → `i18n.supported_locales`. La fuente de verdad de los textos localizados es `i18n.locales`.
-
-## Contenido del paquete
-
-Las rutas son relativas a la raíz del repositorio.
-
-| Ruta | Función |
+| | |
 | --- | --- |
-| `connector-meta.json` | Descriptor del conector, textos localizados, `auth_mode: server-side`, scopes, URL OAuth |
-| `mcp.json` | Configuración de conexión del cliente MCP (`streamableHttp`) |
-| `icon.svg` | Icono (obra gráfica de terceros; fuera de MIT mientras no se confirmen los derechos) |
-| `skills/heimanhome-skill/SKILL.md` | Instrucciones del Skill: 39 herramientas, 5 scopes, reglas multilingües |
-| `README.md`, `i18n/` | Documentación principal en inglés y traducciones |
-| `LICENSE`, `NOTICE`, `OPEN-SOURCE-STATEMENT.md` | Licencia, avisos de marca y titularidad, declaración de código abierto |
+| Endpoint | `https://spmcp.heimanhome.com/mcp` |
+| Transporte | MCP Streamable HTTP |
+| Autorización | OAuth 2.1 con PKCE (inicia sesión con tu cuenta domótica) |
+| Repositorio | `https://github.com/heimanhome/heimanhome-mcp.git` |
+| Soporte | `help@heimanhome.com` |
 
-## Antes de usarlo
+> La versión inglesa [`../README.md`](../README.md) es la autoritativa; esta traducción es orientativa.
 
-`https://spmcp.heimanhome.com/mcp` en `mcp.json` y `connector-meta.json` es la **dirección del servicio desplegado**. Compruebe que el servicio esté accesible antes de conectarse. Es necesario:
+## 1. Conectar y autorizar
 
-1. Desplegar un servidor MCP accesible públicamente por HTTPS (Streamable HTTP + OAuth, RFC 9728 / 8414 / 7591 / 7636 / 7009) con las 39 herramientas de `SKILL.md`.
-2. Si despliega su propio servidor, sustituya la dirección en ambos JSON por su propia dirección HTTPS.
-3. Confirmar la versión de cliente que exige `auth_mode: server-side` (`minWorkbuddyVersion: 4.24.0`).
-4. Obtener legalmente `clientId` / `clientSecret` y la autorización de integración de la plataforma original; las credenciales deben estar **solo en el servidor**.
-5. Validar ambos archivos: `python3 -m json.tool connector-meta.json` y `python3 -m json.tool mcp.json`.
+1. Añade el endpoint a tu cliente MCP con una de las configuraciones siguientes.
+2. El cliente abre la página de autorización; inicia sesión con tu cuenta domótica.
+3. Revisa los permisos: solo lectura por defecto; activa permisos de escritura solo si vas a controlar dispositivos.
+4. Confirma. El cliente guarda el token; las credenciales no se guardan en este repositorio.
 
-El uso de las marcas «Heiman» / 海曼 ha sido autorizado por el titular de los derechos. Los derechos de la imagen integrada en `icon.svg` aún deben confirmarse; si no se confirman, sustitúyala por un icono propio.
+## 2. Configuración del cliente
 
-## Scopes
+**`mcp.json` genérico** (Claude Desktop, Cursor, Cline, Windsurf, Zed, VS Code + GitHub Copilot, MCP Inspector):
 
-Si no se solicita ningún scope, el servidor debe conceder solo lectura (`device:read`, `scene:read`). Los permisos de escritura (`device:control`, `scene:execute`, `security:control`) deben marcarse explícitamente en la página de consentimiento. Armar/desarmar y editar escenas exigen además `confirm=true`; conviene previsualizar las acciones delicadas con `dry_run=true`.
+```json
+{
+  "mcpServers": {
+    "heiman-smart-home": {
+      "type": "streamableHttp",
+      "url": "https://spmcp.heimanhome.com/mcp",
+      "timeout": 30000
+    }
+  }
+}
+```
 
-## Límites del empaquetado
+**Claude Code**:
 
-- **Repositorio público en GitHub:** todos los archivos de este directorio, incluidos `i18n/`, `LICENSE`, `NOTICE` y `OPEN-SOURCE-STATEMENT.md`.
-- **Envío al marketplace de WorkBuddy Connector:** solo los archivos de metadatos exigidos (`connector-meta.json`, `mcp.json`, `icon.svg`, `skills/**/SKILL.md`). No incluir textos legales, `README*` ni `i18n/`.
+```bash
+claude mcp add --transport http heiman-smart-home https://spmcp.heimanhome.com/mcp
+```
 
-## Declaración de código abierto (resumen)
+**Clientes solo stdio** — puente con `mcp-remote`:
 
-- Publicado bajo MIT: `connector-meta.json`, `mcp.json`, `SKILL.md`, `README*`, `NOTICE`, `OPEN-SOURCE-STATEMENT.md`.
-- Excluidos: la imagen incrustada en `icon.svg`, todas las marcas y cualquier contenido privado no distribuido.
-- Sin garantía, se ofrece «tal cual». El operador del servicio remoto es el responsable del tratamiento de datos personales.
-- Texto completo y vinculante: `OPEN-SOURCE-STATEMENT.md`.
+```json
+{
+  "mcpServers": {
+    "heiman-smart-home": {
+      "command": "npx",
+      "args": ["-y", "mcp-remote", "https://spmcp.heimanhome.com/mcp"]
+    }
+  }
+}
+```
 
-## Textos localizados para el marketplace (`es`)
+**Clientes alojados** (ChatGPT, Claude.ai, Copilot Studio, Gemini CLI, WorkBuddy / CodeBuddy): registra un servidor MCP remoto en su interfaz con la misma URL.
 
-Fuente: `connector-meta.json` → `i18n.locales.es`.
+## 3. Ámbitos y escrituras seguras
 
-- **Nombre:** Heiman Smart Home
-- **Descripción:** Controla y consulta los dispositivos Heiman en lenguaje natural: luces, climatización, cortinas, temperatura, registros, estancias y escenas.
-- **Ejemplos:**
-  1. Ajusta el brillo de la luz del salón al 50 %
-  2. ¿Cuál es la temperatura y la humedad actuales del salón?
-  3. Enciende el aire acondicionado del salón y ajústalo a 26 °C
-  4. Cierra las cortinas y ejecuta la escena «En casa»
-  5. Muestra la temperatura y la humedad medias de las últimas 24 horas
+| Ámbito | Permite |
+| --- | --- |
+| `device:read` | Listas, estado, capacidades, firmware, registros, sensores |
+| `device:control` | Encendido/apagado, brillo, temperatura objetivo, cortinas |
+| `scene:read` | Escenas, estancias, hogares, automatizaciones |
+| `scene:execute` | Ejecutar, crear, modificar, eliminar escenas y automatizaciones |
+| `security:control` | Armado / desarmado, confirmación de alarmas |
 
-## Licencia y contacto
+- Sin solicitud explícita solo se concede acceso de lectura.
+- Las acciones sensibles exigen `confirm=true`; previsualízalas con `dry_run=true`.
+- Al reintentar, usa `idempotent_key` y consulta `get_command_status(trace_id)`. Una respuesta correcta significa que el comando fue **aceptado**, no necesariamente ejecutado.
+- `whoami` muestra la identidad y los ámbitos concedidos. Si se rechaza una llamada, corrige el ámbito, el parámetro o la confirmación.
 
-El contenido original está bajo MIT (véase `LICENSE`); marcas, `icon.svg` y contenidos no distribuidos quedan fuera (véase `NOTICE`). La autorización de marca está confirmada y los marcadores de posición están completados; los puntos pendientes restantes figuran en la sección «Remediation status» de [`../README.md`](../README.md).
+## 4. Ejemplos de peticiones
 
-Incidentes de seguridad a `help@heimanhome.com`; nunca publiques credenciales en una issue pública.
+```
+Ajusta el brillo de la luz del salón al 50 %
+¿Cuál es la temperatura y la humedad actuales del salón?
+Enciende el aire acondicionado del salón y ajústalo a 26 °C
+Cierra las cortinas y ejecuta el escenario «En casa»
+Muestra la temperatura y la humedad medias de las últimas 24 horas
+```
+
+El asistente responde en tu idioma; los ejemplos en 8 idiomas están en `connector-meta.json` → `i18n.locales`.
+
+## 5. Problemas frecuentes
+
+| Síntoma | Solución |
+| --- | --- |
+| `401` / autorización caducada | Vuelve a conectar y autorizar |
+| Ámbito no concedido | Vuelve a autorizar y marca el ámbito necesario |
+| Comando aceptado, dispositivo sin cambios | Consulta `get_command_status(trace_id)` y espera |
+| Demasiadas peticiones | Espera antes de reintentar, sin repetir la misma llamada |
+| Sin conexión | Comprueba Streamable HTTP + OAuth y el acceso HTTPS al endpoint |
+
+## 6. Seguridad y privacidad
+
+- Los comandos modifican dispositivos reales: revisa la vista previa `dry_run` y limita los permisos de escritura.
+- Los tokens y credenciales permanecen en el servidor. Nunca publiques tokens ni contraseñas en issues; reporta incidencias a `help@heimanhome.com`.
+- El operador del servicio remoto es el responsable de los datos: consulta `OPEN-SOURCE-STATEMENT.md`.
+
+## Licencia y más documentación
+
+MIT (ver `LICENSE`); propiedad y marcas en `NOTICE`; lista completa de herramientas en `skills/heimanhome-skill/SKILL.md`.
